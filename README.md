@@ -148,3 +148,7 @@ plt.show()
 ## 📊 Visualization
 
 ![Energy Deficit](deficit_plot.png)
+
+## 🌐 Live Demo
+
+https://energy-optimization-ai-nyvbwvgjoszavhysm38uv.streamlit.app
