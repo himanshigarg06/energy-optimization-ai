@@ -151,4 +151,4 @@ plt.show()
 
 ## 🌐 Live Demo
 
-https://energy-optimization-ai-nyvbwvgjoszavhysm38uv.streamlit.app
+https://energy-optimization-ai-nyvbwvggjoszavhysm38uv.streamlit.app/
