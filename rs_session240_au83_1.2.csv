@@ -1,0 +1,170 @@
+Sr. No.,State,Power Plant,Coal Requirement
+1,Delhi,Rajghat,45
+2,Delhi,Badarpur,757
+Sub Total,Sub Total,Sub Total,802
+3,Haryana,Panipat,1035
+4,Haryana,Rajiv Gandhi,3216
+5,Haryana,Yamuna Nagar,1652
+6,Haryana,Indira Gandhi (JV) (Aravali Power),4680
+7,Haryana,Mahatma Gandhi,3575
+Sub Total,Sub Total,Sub Total,14158
+8,Punjab,Gh (leh.moh.),2280
+9,Punjab,Ropar,3066
+10,Punjab,Gnd (Bhatinda),737
+11,Punjab,Rajpura,4050
+12,Punjab,Talwandi Sabo,3960
+Sub Total,Sub Total,Sub Total,14093
+13,Rajasthan,Kota,5433
+14,Rajasthan,Suratgarh,4095
+15,Rajasthan,Chhabra,2880
+16,Rajasthan,Kawai,4163
+17,Rajasthan,Kalisindh,4032
+Sub Total,Sub Total,Sub Total,20603
+18,Uttar Pradesh,Anpara,12920
+19,Uttar Pradesh,Harduaganj,3033
+20,Uttar Pradesh,Obra,4439
+21,Uttar Pradesh,Panki,930
+22,Uttar Pradesh,Parichha,5719
+23,Uttar Pradesh,Dadri (NC),7605
+24,Uttar Pradesh,Rihand,13900
+25,Uttar Pradesh,Singrauli,11512
+26,Uttar Pradesh,Tanda,2313
+27,Uttar Pradesh,Unchahar,4774
+28,Uttar Pradesh,Rosa,5280
+29,Uttar Pradesh,Anpara C,5525
+30,Uttar Pradesh,Barkhera,315
+31,Uttar Pradesh,Kundarki,319
+32,Uttar Pradesh,Khambarkhera,288
+33,Uttar Pradesh,Maqsoodpur,324
+34,Uttar Pradesh,Utraula,318
+35,Uttar Pradesh,Prayagraj,1300
+36,Uttar Pradesh,Lalitpur,1950
+Sub Total,Sub Total,Sub Total,82763
+37,Gujarat,Sikka,872
+38,Gujarat,Gandhi Nagar,1920
+39,Gujarat,Ukai,3752
+40,Gujarat,Wanakbori,4140
+41,Gujarat,Sabarmati (torrent),1454
+42,Gujarat,Mundra,15600
+43,Gujarat,Mundra UM (Tata),10119
+44,Gujarat,Salaya (Essar),2400
+Sub Total,Sub Total,Sub Total,40257
+45,Madhya Pradesh,Amarkantak Ext,901
+46,Madhya Pradesh,Sanjay Gandhi,4970
+47,Madhya Pradesh,Satpura,4565
+48,Madhya Pradesh,Shri Singhaji,4615
+49,Madhya Pradesh,Vindhyachal,21988
+50,Madhya Pradesh,Bina,1725
+51,Madhya Pradesh,Sasan Umpp,16430
+52,Madhya Pradesh,Anuppur,2947
+53,Madhya Pradesh,Nigri,3900
+Sub Total,Sub Total,Sub Total,62041
+54,Chhattisgarh,Dspm,2697
+55,Chhattisgarh,Korba-II,2388
+56,Chhattisgarh,Korba-west,6930
+57,Chhattisgarh,Korba,14040
+58,Chhattisgarh,Sipat,12632
+59,Chhattisgarh,Pathadi,2450
+60,Chhattisgarh,Bhilai,2590
+61,Chhattisgarh,Baradarha,2275
+62,Chhattisgarh,Akaltara,4690
+63,Chhattisgarh,OP Jindal,4004
+64,Chhattisgarh,Tamnar,3640
+65,Chhattisgarh,Singhitarai,260
+66,Chhattisgarh,Balco,1138
+67,Chhattisgarh,Uchpinda,1300
+68,Chhattisgarh,Seioni,325
+69,Chhattisgarh,Raikheda,1625
+Sub Total,Sub Total,Sub Total,62983
+70,Maharastra,Bhusawal,6308
+71,Maharastra,Chandrapur (Maharashtra),12750
+72,Maharastra,Khaparkheda,6192
+73,Maharastra,Koradi,6120
+74,Maharastra,Nasik,2964
+75,Maharastra,Parli,83
+76,Maharastra,Paras,2430
+77,Maharastra,Tirora,11800
+78,Maharastra,Dahanu,2280
+79,Maharastra,Butibori,2160
+80,Maharastra,Amaravati,4891
+81,Maharastra,Emco Warora,2457
+82,Maharastra,Mauda,2130
+83,Maharastra,Wardha Warora,1386
+84,Maharastra,Dhariwal,715
+85,Maharastra,Trombay,2843
+86,Maharastra,JSW Ratnagiri,3360
+Sub Total,Sub Total,Sub Total,70869
+87,Andhra Pradesh,Dr. N. Tata Rao,9750
+88,Andhra Pradesh,Rayalaseema,5415
+89,Andhra Pradesh,Simhadri,10220
+90,Andhra Pradesh,Damodaram Sanjeevaiah,3120
+91,Andhra Pradesh,Painampuram,4472
+92,Andhra Pradesh,Vizag,1300
+93,Andhra Pradesh,Simhapuri,2328
+94,Andhra Pradesh,Thamminapatnam (meenakshi),1073
+Sub Total,Sub Total,Sub Total,37677
+95,Telangana,Kothagudem,8208
+96,Telangana,Ramagundem - B,204
+97,Telangana,Ramagundem,12903
+98,Telangana,Kakatiya,3900
+99,Telangana,Singareni,975
+Sub Total,Sub Total,Sub Total,26190
+100,Karnataka,Raichur,7166
+101,Karnataka,Bellary,4578
+102,Karnataka,Kudgi,337
+103,Karnataka,Yermarus,1365
+104,Karnataka,Udupi,3360
+105,Karnataka,Torangallu (sbu-I),840
+106,Karnataka,Torangallu (sbu-II),1720
+Sub Total,Sub Total,Sub Total,19366
+107,Tamilnadu,Ennore,516
+108,Tamilnadu,Mettur,6080
+109,Tamilnadu,North Chennai,6741
+110,Tamilnadu,Tuticorin,4730
+111,Tamilnadu,Vallur (JV of Ntpc & TN-NTECL),5695
+112,Tamilnadu,Tuticorin (JV of NlC & TN-NTPL),4130
+113,Tamilnadu,Tuticorin (P),488
+114,Tamilnadu,Muthiara,1120
+115,Tamilnadu,ITPCL (cuddalore),680
+Sub Total,Sub Total,Sub Total,30180
+116,Bihar,Kahalgaon,12928
+117,Bihar,Muzaffarpur,1001
+118,Bihar,Barh II (NTPC),3770
+119,Bihar,Nabi Nagar (JV),195
+Sub Total,Sub Total,Sub Total,17894
+120,Jharkhand,Patratu,616
+121,Jharkhand,Tenughat,1900
+122,Jharkhand,Bokaro `b`,1488
+123,Jharkhand,Chandrapura (DVC),3436
+124,Jharkhand,Maithon RB,3814
+125,Jharkhand,Kodarma,2313
+126,Jharkhand,Mahadev Prasad,1586
+127,Jharkhand,Bokaro `a` Exp,428
+Sub Total,Sub Total,Sub Total,15579
+128,Odisha,Ib Valley,2864
+129,Odisha,Talcher (old),2788
+130,Odisha,Talcher S,19712
+131,Odisha,Sterlite,4512
+132,Odisha,Kamalanga,4158
+133,Odisha,Ind Barath (utkal),731
+134,Odisha,Derang,3458
+Sub Total,Sub Total,Sub Total,38223
+135,West Bengal,Durgapur,912
+136,West Bengal,Mejia,7049
+137,West Bengal,Bakreswar,4615
+138,West Bengal,Bandel,1242
+139,West Bengal,D.P.l.,1349
+140,West Bengal,Kolaghat,5220
+141,West Bengal,Sagardighi,2160
+142,West Bengal,Santaldih,2345
+143,West Bengal,Budge Budge,3425
+144,West Bengal,Southern Repl.,448
+145,West Bengal,Titagarh,289
+146,West Bengal,Farakka,9380
+147,West Bengal,Durgapur Steel,3986
+148,West Bengal,Haldia,2601
+149,West Bengal,Raghunathpur,590
+Sub Total,Sub Total,Sub Total,45611
+150,Assam,Bongaigaon,712
+Sub Total,Sub Total,Sub Total,712
+Total,Total,Total,600000
