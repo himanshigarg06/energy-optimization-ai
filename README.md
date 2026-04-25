@@ -1,155 +1,147 @@
 # ⚡ AI-Based Energy Optimization System
 
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Machine Learning](https://img.shields.io/badge/ML-Scikit--Learn-orange)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+---
+
 ## 📌 Problem Statement
-Energy distribution across regions is often inefficient, with some states facing power deficits while others have stable or surplus supply. Additionally, heavy dependence on coal-based energy increases environmental impact.
+Energy distribution across regions is inefficient, with some states facing deficits while others have stable supply. Additionally, high dependence on coal increases environmental impact.
 
 ---
 
 ## 💡 Solution
-This project presents an **AI-powered energy optimization system** that:
-
-- Analyzes energy demand and supply across states
-- Identifies deficit and stable regions
+An AI-powered system that:
+- Analyzes demand vs supply
 - Recommends renewable energy adoption
-- Optimizes electricity redistribution across states
-- Reduces dependency on coal-based energy
+- Optimizes energy redistribution
+- Reduces coal dependency
 
 ---
 
-## 🧠 Approach / Workflow
+## 🧠 Workflow
 
-Data Collection → Data Cleaning → Feature Engineering → ML Model → Recommendation System → Optimization Engine
-
-### 🔹 Steps:
-
-1. **Data Cleaning**
-   - Processed energy availability, coal usage, and renewable datasets
-   - Removed inconsistencies and standardized state names
-
-2. **Feature Engineering**
-   - Energy Deficit = Demand - Supply
-   - Coal Dependency Ratio
-   - Renewable Potential
-
-3. **Machine Learning Model**
-   - Used Random Forest Regressor
-   - Predicted energy deficit trends
-
-4. **Recommendation System**
-   - Suggests:
-     - Renewable installation (MW)
-     - Coal reduction strategies
-     - Energy export opportunities
-
-5. **Optimization Engine (Core)**
-   - Redistributes power from stable states to deficit states
-   - Uses constrained transfer logic
+Data → Cleaning → Feature Engineering → ML Model → Recommendation → Optimization
 
 ---
 
 ## ⚙️ Tech Stack
-
-- Python  
-- Pandas, NumPy  
-- Scikit-learn  
-- Custom optimization logic  
+- Python
+- Pandas, NumPy
+- Scikit-learn
+- Custom Optimization Logic
 
 ---
 
 ## 📊 Results
 
 - ⚡ **Total Energy Redistributed: 1134 MW**
-- High-deficit states addressed:
+- Key deficit regions handled:
   - Jammu & Kashmir
   - Kerala
   - Bihar
 
 ---
 
-## 📈 Example Output
+## 📈 Visualization (Optional but Recommended)
 
-From → To → Power Transfer  
-Haryana → Jammu & Kashmir → 282 MW  
-Delhi → Kerala → 178 MW  
-...  
-Total Redistribution: 1134 MW  
+Add graphs like:
+- Energy Deficit per State
+- Coal Dependency Comparison
+
+---
+
+## 📸 Output Preview
+From → To → Power Transfer
+Haryana → Jammu & Kashmir → 282 MW
+Delhi → Kerala → 178 MW
+...
+Total Redistribution: 1134 MW
+
 
 ---
 
 ## ⚠️ Assumptions
 
-- Renewable potential is distributed equally across states due to lack of granular data  
-- Surplus energy is modeled as **10% of available capacity**  
-- Transfer limits applied to avoid over-dependence on a single state  
+- Renewable potential distributed equally (data limitation)
+- Surplus = 10% of available capacity
+- Transfer constraints applied
 
 ---
 
-## ❓ Common Questions (Viva Ready)
+## ❓ Viva Questions
 
-### Q1: How is surplus energy calculated?
-We modeled surplus as 10% of available generation capacity due to lack of explicit surplus data.
+### Q1: How is surplus calculated?
+Modeled as 10% of available capacity.
 
-### Q2: Why is renewable potential same for all states?
-Due to lack of state-wise data, we used proportional distribution for consistency.
+### Q2: Why same renewable potential?
+Due to lack of granular data.
 
-### Q3: Why is model accuracy high/low?
-The dataset is small and partially synthetic. The model demonstrates predictive capability, while the main contribution is optimization.
+### Q3: Why model error high?
+Small + synthetic dataset; focus is optimization.
 
-### Q4: What is the main contribution?
-Integration of ML + decision logic + optimization to solve real-world energy distribution problems.
-
-### Q5: Can this be used in real life?
-Yes. With real-time grid and renewable data, this can be extended into a real-world smart grid optimization system.
+### Q4: Main contribution?
+ML + decision logic + optimization system.
 
 ---
 
-## 🚀 Setup Instructions
+## 🚀 Setup
 
-### 1. Clone repository
-git clone https://github.com/your-username/energy-optimization-ai.git  
-cd energy-optimization-ai  
+```bash
+git clone https://github.com/himanshigarg06/energy-optimization-ai.git
+cd energy-optimization-ai
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 
-### 2. Create virtual environment
-python3 -m venv venv  
+Run:
+python step2_clean.py
+python step3_merge.py
+python step4_model.py
+python step5_recommend.py
+python step6_optimization.py
 
-### 3. Activate environment
-source venv/bin/activate  
+## Project Structure
+├── step2_clean.py
+├── step3_merge.py
+├── step4_model.py
+├── step5_recommend.py
+├── step6_optimization.py
+├── requirements.txt
+├── README.md
 
-### 4. Install dependencies
-pip install -r requirements.txt  
-
-### 5. Run project
-python step2_clean.py  
-python step3_merge.py  
-python step4_model.py  
-python step5_recommend.py  
-python step6_optimization.py  
-
----
-
-## 📁 Project Structure
-
-energy-optimization-ai/  
-│  
-├── step2_clean.py  
-├── step3_merge.py  
-├── step4_model.py  
-├── step5_recommend.py  
-├── step6_optimization.py  
-├── requirements.txt  
-├── README.md  
-
----
-
-## 🌍 Impact
-
-- Reduces coal dependency  
-- Improves energy efficiency  
-- Supports renewable adoption  
-- Helps in smart grid planning  
-
----
+##Impact
+--Sustainable energy planning
+--Reduced coal dependency
+--Efficient power utilization
 
 ## 🎯 Conclusion
+--This project demonstrates how AI can transform energy systems by combining analysis, prediction, and optimization into a unified solution.
 
-This project demonstrates how AI can be used to **analyze, recommend, and optimize energy systems**, making it a step toward sustainable and efficient power management.
+---
+
+# 📊 OPTIONAL: ADD GRAPH (VERY IMPRESSIVE)
+
+## 📄 Create `visualize.py`
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('final_dataset.csv')
+
+df.sort_values('Energy Deficit (MW)', ascending=False).head(10).plot(
+    x='State', y='Energy Deficit (MW)', kind='bar'
+)
+
+plt.title("Top 10 Energy Deficit States")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig("deficit_plot.png")
+plt.show()
+
+## 📊 Visualization
+
+![Energy Deficit](deficit_plot.png)
