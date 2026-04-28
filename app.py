@@ -5,7 +5,12 @@ import plotly.express as px
 import plotly.graph_objects as go
 import time
 import datetime
+# ================= LIVE AUTO REFRESH SETUP =================
+import numpy as np
+import time
 
+# safe refresh trigger (doesn't break app)
+st.query_params.update({"t": np.random.randint(0, 100000)})
 # ================= PAGE CONFIG =================
 st.set_page_config(page_title="Energy AI", layout="wide")
 
@@ -63,8 +68,24 @@ st.markdown("---")
 # ================= DASHBOARD =================
 if page == "Dashboard":
 
-    st.success("⚡ Live system active")
-    st.caption(f"Updated: {datetime.datetime.now().strftime('%H:%M:%S')}")
+    # ================= LIVE CONTROL PANEL =================
+    st.markdown("### 🟢 Live Data Control")
+
+    col1, col2 = st.columns(2)
+
+    auto_refresh = col1.checkbox("Auto Refresh (3 sec)", value=True)
+    manual_refresh = col2.button("🔄 Refresh Now")
+
+    # ================= REFRESH LOGIC =================
+    if manual_refresh:
+        st.cache_data.clear()
+        st.rerun()
+
+    if auto_refresh:
+        time.sleep(3)
+        st.rerun()
+        st.success("⚡ Live system active")
+        st.caption(f"Updated: {datetime.datetime.now().strftime('%H:%M:%S')}")
 
     # ================= KPI =================
     col1, col2, col3 = st.columns(3)
