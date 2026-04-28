@@ -1,6 +1,21 @@
 import pandas as pd
 
-df = pd.read_csv('final_dataset.csv')
+import numpy as np
+
+# ================= LIVE DATA =================
+url = "https://raw.githubusercontent.com/himanshigarg06/energy-optimization-ai/main/final_dataset.csv"
+
+@st.cache_data(ttl=300)  # refresh every 5 minutes
+def load_data():
+    df = pd.read_csv(url)
+    
+    # simulate small real-time fluctuation
+    df["Peak Demand (MW)"] += np.random.randint(-20, 20, size=len(df))
+    df["Energy Deficit (MW)"] += np.random.randint(-10, 10, size=len(df))
+    
+    return df
+
+df = load_data()
 
 # Separate deficit and surplus states
 deficit_states = df[df['Energy Deficit (MW)'] > 0].copy()
