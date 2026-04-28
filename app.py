@@ -28,7 +28,6 @@ h1, h2, h3 {
 """, unsafe_allow_html=True)
 
 # ================= LOAD DATA =================
-# ================= LOAD DATA =================
 @st.cache_data(ttl=300)
 def load_data():
     url = "https://raw.githubusercontent.com/himanshigarg06/energy-optimization-ai/main/final_dataset.csv"
@@ -42,6 +41,25 @@ import numpy as np
 df["Peak Demand (MW)"] += np.random.randint(-50, 50, size=len(df))
 df["Energy Deficit (MW)"] += np.random.randint(-30, 30, size=len(df))
 
+# ================= MODEL TRAINING =================
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.tree import DecisionTreeRegressor
+
+# Optional: default model (you can later connect to UI selection)
+model_choice = "Linear Regression"
+
+X = df[["Peak Demand (MW)", "Coal Dependency Ratio"]]
+y = df["Energy Deficit (MW)"]
+
+if model_choice == "Linear Regression":
+    model = LinearRegression()
+elif model_choice == "Random Forest":
+    model = RandomForestRegressor(n_estimators=100)
+else:
+    model = DecisionTreeRegressor()
+
+model.fit(X, y)
 # ================= SIDEBAR =================
 st.sidebar.title("⚡ Energy AI Dashboard")
 page = st.sidebar.radio("Navigate", ["Dashboard", "Recommendations"])
@@ -165,7 +183,78 @@ if page == "Dashboard":
 
     st.markdown("---")
 
+    # ================= LIVE MOVING GRAPH =================
+    import plotly.graph_objects as go
+    import numpy as np
+    import time
 
+    st.markdown("### 📈 Live Demand Trend")
+
+    # generate fake live trend
+    time_points = list(range(20))
+    values = list(df["Peak Demand (MW)"].head(20))
+
+    fig_live = go.Figure()
+
+    fig_live.add_trace(go.Scatter(
+        x=time_points,
+        y=values,
+        mode='lines+markers',
+        line=dict(color='cyan', width=3),
+    ))
+
+    fig_live.update_layout(
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(color="white"),
+        title="Real-Time Demand Fluctuation"
+    )
+
+    placeholder = st.empty()
+
+    # animation loop (lightweight)
+    for i in range(10):
+        new_val = values[-1] + np.random.randint(-20, 20)
+        values.append(new_val)
+        values.pop(0)
+
+        fig_live.data[0].y = values
+        fig_live.data[0].x = list(range(len(values)))
+
+        placeholder.plotly_chart(fig_live, width='stretch')
+        time.sleep(0.5)
+
+    # ================= FUTURE PREDICTION =================
+    st.markdown("### 🔮 Future Energy Forecast")
+
+    years = st.slider("Years Ahead", 1, 10, 3)
+    growth = st.slider("Demand Growth (%)", 1, 10, 5)
+
+    df_future = df.copy()
+
+    # simulate future demand
+    df_future["Peak Demand (MW)"] *= (1 + growth/100) ** years
+
+    future_pred = model.predict(df_future[["Peak Demand (MW)", "Coal Dependency Ratio"]])
+    df_future["Future Deficit"] = future_pred
+
+    future_total = df_future["Future Deficit"].sum()
+
+    st.metric("Predicted Total Deficit", round(future_total, 2))
+    #Future Predictionss
+
+    import plotly.express as px
+
+    fig_future = px.bar(
+        df_future.sort_values("Future Deficit", ascending=False).head(10),
+        x="State",
+        y="Future Deficit",
+        color="Future Deficit",
+        color_continuous_scale="purples",
+        title="Future High-Risk States"
+    )
+
+    st.plotly_chart(fig_future, width='stretch')
     #Indian Map
     # ================= INDIA MAP (WORKING DEFINITIVE VERSION) =================
     #fake data
@@ -257,6 +346,20 @@ if page == "Dashboard":
     )
 
     st.plotly_chart(fig_map, width='stretch')
+    # ================= MAP PULSE EFFECT =================
+    st.markdown("### ⚡ Grid Activity Pulse")
+
+    pulse = st.empty()
+
+    import time
+
+    for i in range(3):
+        pulse.success("🟢 Grid Stable - Energy Flow Active")
+        time.sleep(0.6)
+        pulse.warning("🟡 Load Fluctuation Detected")
+        time.sleep(0.6)
+        pulse.success("🟢 Redistribution Optimized")
+        time.sleep(0.6)
     # ================= AI PANEL =================
     st.markdown("### 🤖 AI Decision Engine")
 
