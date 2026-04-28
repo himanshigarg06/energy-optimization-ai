@@ -28,6 +28,12 @@ h1, h2, h3 {
 """, unsafe_allow_html=True)
 
 # ================= LOAD DATA =================
+# ================= LOAD DATA =================
+@st.cache_data(ttl=300)
+def load_data():
+    url = "https://raw.githubusercontent.com/himanshigarg06/energy-optimization-ai/main/final_dataset.csv"
+    return pd.read_csv(url)
+
 df = load_data().copy()
 
 # 🔥 LIVE SIMULATION (forces change every run)
