@@ -28,7 +28,13 @@ h1, h2, h3 {
 """, unsafe_allow_html=True)
 
 # ================= LOAD DATA =================
-df = pd.read_csv("final_dataset.csv")
+df = load_data().copy()
+
+# 🔥 LIVE SIMULATION (forces change every run)
+import numpy as np
+
+df["Peak Demand (MW)"] += np.random.randint(-50, 50, size=len(df))
+df["Energy Deficit (MW)"] += np.random.randint(-30, 30, size=len(df))
 
 # ================= SIDEBAR =================
 st.sidebar.title("⚡ Energy AI Dashboard")
@@ -57,6 +63,11 @@ if page == "Dashboard":
     st.markdown("### 🟢 Live Grid Status")
 
     st.success("⚡ Data updating automatically every 5 minutes")
+
+    #Last updated time
+    import datetime
+    st.caption(f"Last updated: {datetime.datetime.now().strftime('%H:%M:%S')}")
+
     #Manual Button
     if st.button("🔄 Refresh Live Data"):
         st.cache_data.clear()
