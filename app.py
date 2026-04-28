@@ -53,6 +53,14 @@ with st.spinner("⚡ Initializing AI Grid System..."):
  
 # ================= DASHBOARD =================
 if page == "Dashboard":
+    # ================= LIVE STATUS =================
+    st.markdown("### 🟢 Live Grid Status")
+
+    st.success("⚡ Data updating automatically every 5 minutes")
+    #Manual Button
+    if st.button("🔄 Refresh Live Data"):
+        st.cache_data.clear()
+        st.rerun()
 
     # 🔥 KPI CARDS
     col1, col2, col3 = st.columns(3)
