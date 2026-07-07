@@ -74,22 +74,6 @@ Total Redistribution: 1134 MW
 
 ---
 
-## ❓ Viva Questions
-
-### Q1: How is surplus calculated?
-Modeled as 10% of available capacity.
-
-### Q2: Why same renewable potential?
-Due to lack of granular data.
-
-### Q3: Why model error high?
-Small + synthetic dataset; focus is optimization.
-
-### Q4: Main contribution?
-ML + decision logic + optimization system.
-
----
-
 ## 🚀 Setup
 
 ```bash
@@ -125,8 +109,6 @@ python step6_optimization.py
 
 ---
 
-# 📊 OPTIONAL: ADD GRAPH (VERY IMPRESSIVE)
-
 ## 📄 Create `visualize.py`
 
 ```python
@@ -144,10 +126,6 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.savefig("deficit_plot.png")
 plt.show()
-
-## 📊 Visualization
-
-![Energy Deficit](deficit_plot.png)
 
 ## 🌐 Live Demo
 
